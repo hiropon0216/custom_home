@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="注文住宅マスター教科書 — SE工法・資金計画・住宅ローン・土地選びから登記まで、注文住宅の全知識を17章・340問のクイズで体系的に学べる学習アプリ。滋賀・京都エリア対応。">
+  <meta name="keywords" content="注文住宅,SE工法,住宅ローン,資金計画,土地選び,ライフプラン,滋賀,京都,学習,クイズ">
+  <meta name="author" content="注文住宅マスター教科書">
+  <meta property="og:title" content="注文住宅マスター教科書">
+  <meta property="og:description" content="注文住宅の全知識を17章・340問で体系的に学べる学習アプリ">
+  <meta property="og:type" content="website">
+  <title>注文住宅マスター教科書</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- ローディング画面 -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-content">
+      <div class="loading-logo">注文住宅マスター教科書</div>
+      <div class="loading-spinner"></div>
+      <div class="loading-text">読み込み中...</div>
+    </div>
+  </div>
+
+  <!-- ヘッダー -->
+  <header class="app-header">
+    <div class="header-inner">
+      <h1 class="app-title" id="home-link">注文住宅マスター教科書</h1>
+      <div class="header-progress">
+        <div class="header-progress-label">
+          <span>総合進捗</span>
+          <span id="overall-progress-text">0 / 17 章クリア</span>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="overall-progress-fill" style="width:0%"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- メインコンテンツ -->
+  <main id="app" class="app-main">
+    <!-- 各ビューがここに描画される -->
+  </main>
+
+  <footer class="app-footer">
+    <p>注文住宅マスター教科書 — 全17章 / 340問で学ぶ家づくりの教科書</p>
+  </footer>
+
+  <!-- データ -->
+  <script src="js/data/chapters.js"></script>
+  <script src="js/data/questions.js"></script>
+  <!-- ロジック -->
+  <script src="js/progress.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
