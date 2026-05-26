@@ -90,11 +90,17 @@ const Quiz = (function () {
         </div>`;
     } else {
       const markers = ['A', 'B', 'C', 'D', 'E', 'F'];
+      // 選択肢をシャッフル（data-valueは元インデックスを保持するため採点ロジック変更不要）
+      const indices = q.options.map(function (_, i) { return i; });
+      for (let i = indices.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = indices[i]; indices[i] = indices[j]; indices[j] = tmp;
+      }
       optionsHtml = '<div class="quiz-options">' +
-        q.options.map(function (opt, i) {
-          return `<button class="option-btn" data-value="${i}">
-            <span class="opt-marker">${markers[i]}</span>
-            <span>${escapeHtml(opt)}</span>
+        indices.map(function (origIdx, displayPos) {
+          return `<button class="option-btn" data-value="${origIdx}">
+            <span class="opt-marker">${markers[displayPos]}</span>
+            <span>${escapeHtml(q.options[origIdx])}</span>
           </button>`;
         }).join('') +
         '</div>';
